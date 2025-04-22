@@ -18,8 +18,6 @@ if "predictions" not in st.session_state:
     st.session_state.predictions = []
 if "corrections_log" not in st.session_state:
     st.session_state.corrections_log = []
-if "movement_input_learn" not in st.session_state:
-    st.session_state.movement_input_learn = ""
 
 # ---------- PASSCODE ----------
 if not st.session_state.authenticated:
@@ -37,7 +35,6 @@ if st.button("🔁 Reset All Data"):
     st.session_state.movement_log = []
     st.session_state.predictions = []
     st.session_state.corrections_log = []
-    st.session_state.movement_input_learn = ""
     st.success("All data reset.")
 
 # ---------- NUMBER ENTRY ----------
@@ -70,21 +67,13 @@ with st.form("number_input_form", clear_on_submit=True):
 # ---------- BALL MOVEMENT ----------
 st.subheader("Ball Movement")
 
-with st.form("movement_only_form"):
-    st.text_input("How many spaces did the ball move?", key="movement_input_learn")
+with st.form("movement_only_form", clear_on_submit=True):
+    movement = st.number_input("How many spaces did the ball move?", min_value=0, step=1, key="movement_input_learn")
     movement_submit = st.form_submit_button("Submit Ball Movement")
 
     if movement_submit:
-        movement = st.session_state.get("movement_input_learn", "").strip()
-        if movement.isdigit():
-            st.session_state.movement_log.append({
-                "numbers": [],
-                "movement": int(movement)
-            })
-            st.success(f"Ball movement of {movement} recorded.")
-        else:
-            st.warning("Please enter a valid number (0 or more).")
-        st.session_state.movement_input_learn = ""
+        st.session_state.movement_log.append({"numbers": [], "movement": movement})
+        st.success(f"Ball movement of {movement} recorded.")
 
 # ---------- AI PREDICTION ----------
 st.subheader("AI Prediction")
@@ -145,7 +134,6 @@ if st.session_state.number_history:
     st.table(history_table)
 else:
     st.info("No numbers submitted yet.")
-
 # ---------- ROULETTE IMAGE AT BOTTOM ----------
 st.markdown(
     """
