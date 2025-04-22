@@ -149,7 +149,7 @@ else:
 # ---------- ROULETTE IMAGE AT BOTTOM ----------
 st.markdown(
     """
-    <div style="text-align: center; padding-top: 20px;">
+    <div style="text-align: center; padding-top: 40px;">
         <a href="https://postimg.cc/R3JJZZTT" target="_blank">
             <img src="https://i.postimg.cc/R3JJZZTT/Wheel-png.webp"
                  style="max-width: 95%; height: auto; border: 1px solid #ccc;"
