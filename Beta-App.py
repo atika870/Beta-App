@@ -147,10 +147,13 @@ else:
     st.info("No numbers submitted yet.")
 
 # ---------- ROULETTE IMAGE AT BOTTOM ----------
+# ---------- ROULETTE IMAGE AT BOTTOM ----------
 st.markdown(
     """
     <div style="text-align: center; padding-top: 30px;">
-        <img src="https://www.pikpng.com/pngl/m/246-2461463_transparent-american-roulette-wheel-png.png" width="500">
+        <a href="https://postimg.cc/Tysv2RPf" target="_blank">
+            <img src="https://i.postimg.cc/Tysv2RPf/Wheel-png.png" width="500" alt="Roulette Wheel">
+        </a>
     </div>
     """,
     unsafe_allow_html=True
