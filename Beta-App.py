@@ -31,16 +31,6 @@ if not st.session_state.authenticated:
         st.error("Incorrect passcode ❌")
     st.stop()
 
-# ---------- IMAGE (Displayed after login) ----------
-st.markdown(
-    """
-    <div style="text-align: center; padding-top: 10px;">
-        <img src="https://sl.bing.net/bzZGtjBK8OW" width="400">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 # ---------- RESET ----------
 if st.button("🔁 Reset All Data"):
     st.session_state.number_history = defaultdict(int)
@@ -155,3 +145,13 @@ if st.session_state.number_history:
     st.table(history_table)
 else:
     st.info("No numbers submitted yet.")
+
+# ---------- ROULETTE IMAGE AT BOTTOM ----------
+st.markdown(
+    """
+    <div style="text-align: center; padding-top: 30px;">
+        <img src="https://www.pikpng.com/pngl/m/246-2461463_transparent-american-roulette-wheel-png.png" width="500">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
