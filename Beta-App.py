@@ -147,3 +147,12 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+# ---------- COPYRIGHT FOOTER ----------
+st.markdown(
+    """
+    <div style="text-align: center; color: gray; font-size: 14px; padding-top: 10px;">
+        &copy; 2025 AJMGamerGirl
+    </div>
+    """,
+    unsafe_allow_html=True
+)
